@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e2e54" stroke-width="1"/>
+    </pattern>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="400" fill="#0f1a30"/>
+  <rect width="800" height="400" fill="url(#grid)"/>
+  <rect x="385" y="0" width="22" height="400" fill="#243464" rx="2"/>
+  <rect x="0" y="165" width="800" height="18" fill="#1e2e54" rx="2"/>
+  <rect x="0" y="250" width="800" height="14" fill="#1a2744" rx="2"/>
+  <rect x="315" y="110" width="65" height="45" rx="4" fill="#162240" stroke="#1e3a6e" stroke-width="1"/>
+  <rect x="412" y="110" width="80" height="45" rx="4" fill="#162240" stroke="#1e3a6e" stroke-width="1"/>
+  <rect x="315" y="195" width="65" height="40" rx="4" fill="#162240" stroke="#1e3a6e" stroke-width="1"/>
+  <rect x="412" y="195" width="70" height="40" rx="4" fill="#162240" stroke="#1e3a6e" stroke-width="1"/>
+  <circle cx="396" cy="174" r="28" fill="#2eb8b0" fill-opacity="0.2" filter="url(#glow)"/>
+  <circle cx="396" cy="174" r="14" fill="#2eb8b0" fill-opacity="0.5"/>
+  <circle cx="396" cy="174" r="7" fill="#2eb8b0"/>
+  <rect x="248" y="220" width="296" height="62" rx="8" fill="#1a2744" fill-opacity="0.97" stroke="#2eb8b0" stroke-width="1.5"/>
+  <text x="396" y="242" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#2eb8b0" text-anchor="middle">D &amp; M Chiropractic</text>
+  <text x="396" y="259" font-family="system-ui,sans-serif" font-size="11" fill="#8ab4d4" text-anchor="middle">2589 Washington Road, Suite 410</text>
+  <text x="396" y="275" font-family="system-ui,sans-serif" font-size="11" fill="#8ab4d4" text-anchor="middle">Upper St. Clair, PA 15241</text>
+  <text x="396" y="360" font-family="system-ui,sans-serif" font-size="10" fill="#4a6a8a" text-anchor="middle">Washington Road</text>
+</svg>

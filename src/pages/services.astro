@@ -1,0 +1,285 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import service1 from '../assets/images/service1.jpg';
+import service2 from '../assets/images/service2.jpg';
+import service3 from '../assets/images/service3.jpg';
+import service4 from '../assets/images/service4.jpg';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "D & M Chiropractic and Therapeutic Rehab, Inc.",
+  "url": "https://dm-chiro.keithkelly.dev",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Chiropractic Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "MedicalProcedure", "name": "Chiropractic Adjustments" } },
+      { "@type": "Offer", "itemOffered": { "@type": "MedicalProcedure", "name": "Pediatric Chiropractic" } },
+      { "@type": "Offer", "itemOffered": { "@type": "MedicalProcedure", "name": "Physical Therapy" } },
+      { "@type": "Offer", "itemOffered": { "@type": "MedicalProcedure", "name": "Nutritional Counseling" } }
+    ]
+  }
+};
+---
+<Layout
+  title="Chiropractic Services | D & M Chiropractic — Upper St. Clair, PA"
+  description="Comprehensive chiropractic services including spinal adjustments, pediatric chiropractic, physical therapy, massage, and nutritional counseling in Upper St. Clair, PA."
+  canonicalPath="/services/"
+  schema={serviceSchema}
+  page="services"
+>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-bg" aria-hidden="true"></div>
+    <div class="container page-hero-content">
+      <span class="section-label reveal">Our Services</span>
+      <h1 class="page-hero-heading reveal reveal-delay-1">Individualized Care<br/><span class="teal-text">For Every Patient</span></h1>
+      <p class="page-hero-sub reveal reveal-delay-2">From acute pain relief to preventive wellness, we offer a full range of chiropractic and rehabilitative services tailored to your unique needs.</p>
+    </div>
+  </section>
+
+  <!-- Main Services -->
+  <section class="section" id="chiropractic" aria-labelledby="chiro-heading">
+    <div class="container">
+      <div class="service-detail-layout">
+        <div class="service-detail-img reveal">
+          <Image src={service1} alt="Chiropractic spinal adjustment" widths={[500, 800]} class="service-detail-photo" />
+        </div>
+        <div class="service-detail-copy reveal reveal-delay-2">
+          <span class="section-label">Primary Treatment</span>
+          <div class="teal-line"></div>
+          <h2 class="section-heading" id="chiro-heading">Chiropractic Care</h2>
+          <p>The chiropractic spinal adjustment is the cornerstone of everything we do. By applying controlled, precise force to subluxated vertebrae, we correct structural and biomechanical abnormalities that cause pain and impair nervous system function.</p>
+          <p style="margin-top:1rem;">Unlike symptom-based treatment, our approach identifies and corrects the root cause — giving you lasting relief without drugs, surgery, or injections.</p>
+          <div class="service-benefits">
+            {[
+              'Reduces pain and inflammation',
+              'Eliminates nerve irritation',
+              'Restores spinal biomechanics',
+              'Improves range of motion',
+              'Enhances overall wellness',
+              'Safe for all ages, including infants',
+            ].map(b => (
+              <div class="benefit-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>{b}</span>
+              </div>
+            ))}
+          </div>
+          <a href="/contact/" class="btn btn-primary" style="margin-top:2rem;">Book a Free Consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pediatric -->
+  <section class="section section-alt" id="pediatric" aria-labelledby="pedi-heading">
+    <div class="container">
+      <div class="service-detail-layout reverse">
+        <div class="service-detail-img reveal reveal-delay-2">
+          <Image src={service3} alt="Pediatric chiropractic care" widths={[500, 800]} class="service-detail-photo" />
+        </div>
+        <div class="service-detail-copy reveal">
+          <span class="section-label">For Families</span>
+          <div class="teal-line"></div>
+          <h2 class="section-heading" id="pedi-heading">Pediatric Chiropractic</h2>
+          <p>Most adult spinal problems begin in childhood — often starting at birth. The process of delivery places significant stress on an infant's spine and nervous system. Early, gentle chiropractic care can prevent these issues from compounding.</p>
+          <p style="margin-top:1rem;">Dr. Gutmann found that 80% of all children have a subluxation in the upper cervical spine, which can contribute to lowered resistance, frequent colds, ear infections, and chronic tonsillitis — all of which respond better to chiropractic care than antibiotics alone.</p>
+          <div class="service-benefits">
+            {[
+              'Safe and gentle for newborns through teens',
+              'Addresses birth trauma subluxations',
+              'Supports immune system function',
+              'Helps prevent scoliosis progression',
+              'Supports healthy neurological development',
+            ].map(b => (
+              <div class="benefit-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>{b}</span>
+              </div>
+            ))}
+          </div>
+          <a href="/contact/" class="btn btn-primary" style="margin-top:2rem;">Schedule a Child's Evaluation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Physical Therapy -->
+  <section class="section" id="therapy" aria-labelledby="therapy-heading">
+    <div class="container">
+      <div class="service-detail-layout">
+        <div class="service-detail-img reveal">
+          <Image src={service2} alt="Physical therapy and rehabilitation" widths={[500, 800]} class="service-detail-photo" />
+        </div>
+        <div class="service-detail-copy reveal reveal-delay-2">
+          <span class="section-label">Rehabilitation</span>
+          <div class="teal-line"></div>
+          <h2 class="section-heading" id="therapy-heading">Physical Therapy & Adjunctive Therapies</h2>
+          <p>Chiropractic adjustments are most effective when combined with targeted rehabilitation. Our licensed doctors integrate physical therapy to accelerate healing, restore strength, and prevent re-injury.</p>
+
+          <div class="therapy-grid">
+            {[
+              { name: 'Soft Tissue & Massage', desc: 'Trigger point therapy, proprioceptive neuromuscular facilitation, and massage reduce muscle spasm and hypertonicity.' },
+              { name: 'Therapeutic Exercise', desc: 'Prescribed strengthening and stabilizing routines for neck, back, and extremities — essential after injury.' },
+              { name: 'Physical Modalities', desc: 'Electrical stimulation, therapeutic ultrasound, interferential stimulation, and diathermy for accelerated healing.' },
+              { name: 'Auto & Work Injuries', desc: 'Specialized treatment protocols for motor vehicle accidents and workplace injuries with NASA-derived spinal monitoring technology.' },
+            ].map(t => (
+              <div class="therapy-item card">
+                <h3 class="therapy-name">{t.name}</h3>
+                <p class="therapy-desc">{t.desc}</p>
+              </div>
+            ))}
+          </div>
+          <a href="/contact/" class="btn btn-primary" style="margin-top:2rem;">Start Your Recovery</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nutrition -->
+  <section class="section section-alt" id="nutrition" aria-labelledby="nutrition-heading">
+    <div class="container">
+      <div class="service-detail-layout reverse">
+        <div class="service-detail-img reveal reveal-delay-2">
+          <Image src={service4} alt="Nutritional counseling" widths={[500, 800]} class="service-detail-photo" />
+        </div>
+        <div class="service-detail-copy reveal">
+          <span class="section-label">Whole-Body Wellness</span>
+          <div class="teal-line"></div>
+          <h2 class="section-heading" id="nutrition-heading">Nutritional & Lifestyle Counseling</h2>
+          <p>True health is more than the absence of pain. Dietary imbalances contribute to heart disease, diabetes, cancer, and chronic inflammation. Lifestyle choices — posture, sleep, stress, activity — slowly erode or build your health over time.</p>
+          <p style="margin-top:1rem;">Our doctors received thorough training in human nutrition and offer personalized dietary and lifestyle programs designed to support your body's natural healing processes and long-term wellness goals.</p>
+          <div class="service-benefits">
+            {[
+              'Personalized dietary programs',
+              'Nutritional supplement guidance',
+              'Stress management techniques',
+              'Ergonomics & posture coaching',
+              'Lifestyle modification counseling',
+              'Chronic disease risk reduction',
+            ].map(b => (
+              <div class="benefit-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>{b}</span>
+              </div>
+            ))}
+          </div>
+          <a href="/contact/" class="btn btn-primary" style="margin-top:2rem;">Book a Wellness Consult</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Massage -->
+  <section class="section" id="massage" aria-labelledby="massage-heading">
+    <div class="container massage-section">
+      <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto 3rem;">
+        <span class="section-label">Therapeutic</span>
+        <div class="teal-line" style="margin:0.75rem auto 0;"></div>
+        <h2 class="section-heading" id="massage-heading">Massage Therapy</h2>
+        <p class="section-sub" style="margin:0 auto;">Integrated with your chiropractic care plan, massage therapy reduces muscle tension, improves circulation, and accelerates recovery. Our soft-tissue techniques complement every stage of treatment.</p>
+      </div>
+      <div class="massage-cta reveal reveal-delay-2">
+        <div class="massage-cta-inner card">
+          <h3>Ready to Begin?</h3>
+          <p>New patients receive a free consultation and free MRI review — a $247 value. Call us or submit the online request form and we'll get you scheduled.</p>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;">
+            <a href="/contact/" class="btn btn-primary">Request Appointment</a>
+            <a href="tel:+14128331101" class="btn btn-outline">(412) 833-1101</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero {
+    position: relative;
+    padding: 8rem 1.5rem 5rem;
+    overflow: hidden;
+    background: var(--navy-dark);
+  }
+  .page-hero-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(46,184,176,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .page-hero-content { position: relative; z-index: 1; max-width: 700px; }
+  .page-hero-heading {
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin: 0.5rem 0 1.25rem;
+  }
+  .teal-text { color: var(--teal); }
+  .page-hero-sub { font-size: 1.0625rem; color: var(--gray-mid); max-width: 560px; }
+
+  .section-alt { background: var(--navy-mid); }
+  .section { background: var(--navy-dark); }
+
+  .service-detail-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .service-detail-layout.reverse { direction: rtl; }
+  .service-detail-layout.reverse > * { direction: ltr; }
+  @media (max-width: 768px) {
+    .service-detail-layout { grid-template-columns: 1fr; gap: 2rem; }
+    .service-detail-layout.reverse { direction: ltr; }
+  }
+  .service-detail-photo {
+    width: 100%;
+    border-radius: var(--radius);
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border: 1px solid rgba(46,184,176,0.12);
+  }
+  .service-detail-copy p { color: var(--gray-mid); font-size: 0.9375rem; line-height: 1.75; }
+
+  .service-benefits { display: flex; flex-direction: column; gap: 0.625rem; margin-top: 1.5rem; }
+  .benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    font-size: 0.875rem;
+    color: var(--gray-light);
+  }
+  .benefit-item svg { flex-shrink: 0; margin-top: 2px; }
+
+  .therapy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  @media (max-width: 500px) { .therapy-grid { grid-template-columns: 1fr; } }
+  .therapy-item { padding: 1.25rem; }
+  .therapy-name {
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--teal);
+    margin-bottom: 0.5rem;
+  }
+  .therapy-desc { font-size: 0.8125rem; color: var(--gray-mid); line-height: 1.65; }
+
+  .massage-cta { max-width: 700px; margin: 0 auto; }
+  .massage-cta-inner h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+  }
+  .massage-cta-inner p { color: var(--gray-mid); }
+</style>
